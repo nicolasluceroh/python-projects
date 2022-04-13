@@ -12,14 +12,13 @@ def run():
         hint = input("Okay, give me a hint! Is it bigger or smaller (B or S): ")
         if hint.lower() == 'b':
                 nums_range[0] = num_console
-                num_console = random.randint(nums_range[0]+1, nums_range[1]-1)
         elif hint.lower() == 's':
                 nums_range[1] = num_console
-                num_console = random.randint(nums_range[0]+1, nums_range[1]-1)
+        num_console = random.randint(nums_range[0]+1, nums_range[1]-1)
         res = input("Your number is " + str(num_console) + "? (Y o N): ")
         if res.lower() == 'y' and num_console != num_user:
             print("Are you sure? I don't think that's your number!")
-        if res.lower() == 'y' and num_console == num_user:
+        elif res.lower() == 'y' and num_console == num_user:
             print("Haha! Very easy! I won!")
         elif res.lower() == 'n' and num_console == num_user:
             print("Mmm, are you sure? I know you're lying! I won!")
